@@ -1,0 +1,172 @@
+:root {
+  --bg: #07080d;
+  --text: #f2f4fb;
+  --muted: #9aa0b5;
+  --border: rgba(255, 255, 255, 0.09);
+  --teal: #2dd4bf;
+  --blue: #3b82f6;
+  --purple: #8b5cf6;
+  --grad: linear-gradient(120deg, #2dd4bf 0%, #3b82f6 48%, #8b5cf6 100%);
+  --font: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Background orbs */
+.bg-orbs {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  width: 46vw;
+  height: 46vw;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.3;
+}
+
+.orb--teal {
+  background: var(--teal);
+  top: -14vw;
+  left: -8vw;
+}
+
+.orb--blue {
+  background: var(--blue);
+  top: 28vw;
+  right: -10vw;
+  opacity: 0.26;
+}
+
+.orb--purple {
+  background: var(--purple);
+  bottom: -16vw;
+  left: 20vw;
+  opacity: 0.24;
+}
+
+/* Landing */
+.landing {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.landing__card {
+  position: relative;
+  width: 600px;
+  max-width: 92vw;
+  aspect-ratio: 1280 / 800;
+  background-image: url("/brand/Dreamodus-dark.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  box-shadow: 0 30px 80px -30px rgba(59, 130, 246, 0.55);
+  margin-bottom: 2.5rem;
+}
+
+/* Gradient glow framing the logo card */
+.landing__card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 26px;
+  padding: 2px;
+  background: var(--grad);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.landing__card::after {
+  content: "";
+  position: absolute;
+  inset: 8% 10%;
+  z-index: -1;
+  background: var(--grad);
+  filter: blur(55px);
+  opacity: 0.4;
+}
+
+.landing h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+.grad {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.landing__sub {
+  margin: 1.4rem 0 2.4rem;
+  max-width: 540px;
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.btn--primary {
+  background: var(--grad);
+  color: #06070c;
+  box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.6);
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px -12px rgba(139, 92, 246, 0.7);
+}
+
+.landing__footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  border-top: 1px solid var(--border);
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DreaModus Software Inc.</title>
+    <meta
+      name="description"
+      content="DreaModus Software Inc. — we turn ambitious ideas into reliable software."
+    />
+    <meta property="og:title" content="DreaModus Software Inc." />
+    <meta
+      property="og:description"
+      content="We turn ambitious ideas into reliable software."
+    />
+    <meta property="og:image" content="/brand/Dreamodus-dark.jpg" />
+    <link rel="icon" type="image/jpeg" href="/brand/Dreamodus-dark.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="bg-orbs" aria-hidden="true">
+      <span class="orb orb--teal"></span>
+      <span class="orb orb--blue"></span>
+      <span class="orb orb--purple"></span>
+    </div>
+
+    <main class="landing">
+      <div
+        class="landing__card"
+        role="img"
+        aria-label="DreaModus Software Inc."
+      ></div>
+      <h1>
+        We turn ambitious ideas into
+        <span class="grad">reliable software.</span>
+      </h1>
+      <p class="landing__sub">
+        DreaModus Software Inc. designs and builds web, mobile, and AI products
+        — from the first idea to launch.
+      </p>
+      <a class="btn btn--primary" href="mailto:info@dreamodus.software">
+        Get in touch
+      </a>
+    </main>
+
+    <footer class="landing__footer">
+      © <span id="year"></span> DreaModus Software Inc.
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
